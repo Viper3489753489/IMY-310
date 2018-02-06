@@ -1,0 +1,24 @@
+.background-image {	/*The following will blur any image*/
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  display: block;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  right: 0;
+  z-index: -2;
+}
+.logo { /*This will center the logo in the middle the padding should be half of the width to ensure its precisely in the middle*/
+       position: absolute;
+       top: 40%;      
+       right:50%;
+       padding: 0px 0px 0px 100px;
+       width:200px;
+}
+.search {
+	width: 200px;
+
+
+}
