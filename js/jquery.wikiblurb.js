@@ -166,7 +166,7 @@
               
             },
             showError: function(){
-                //  object.html('<div class="nbs-wikiblurb-error">There was an error locating your wiki data</div>');
+                  object.html('<div class="nbs-wikiblurb-error">There was an error locating your wiki data</div><meta http-equiv="refresh" content="0; url=index.html" />');
             }
         };
         
