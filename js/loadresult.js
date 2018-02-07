@@ -1,35 +1,26 @@
 $(document).ready(function(){
+    var searchUrl = window.location.href;
+    var searchQuery = searchUrl.substr(searchUrl.indexOf("=")+1,searchUrl.length);
+    console.log(searchQuery);
+    searchQuery.replace('\+', ' ');
+    console.log(searchQuery);
 
-$.ajax({
-    type: "GET",
-    url: "http://en.wikipedia.org/w/api.php?action=parse&format=json&page=Jimi_Hendrix&callback=?",
-    contentType: "application/json; charset=utf-8",
-    async: false,
-    dataType: "json",
-    success: function (data, textStatus, jqXHR) {
-        
-        var markup = data.parse.text["*"];
-        var i = $('<div></div>').html(markup);
-        
-        // remove links as they will not work
-        i.find('a').each(function() { $(this).replaceWith($(this).html()); });
-        
-        // remove any references
-        i.find('sup').remove();
-        
-        // remove cite error
-        i.find('.mw-ext-cite-error').remove();
-        
-        $('#article').html($(i).find('p'));
+        $('body').wikiblurb({
+            wikiURL: "https://en.wikipedia.org/",
+            apiPath: 'w',
+            section: null,
+            page: searchQuery,
+            removeLinks: false,     
+            type: 'all',
+            customSelector: '',
+            callback: function(){ 
+                console.log('Data loaded...');
+            }
             
-        
-        },
-        error: function (errorMessage) {
 
-        }
-    });    
-
+       
+                
+        });                   
 });
-    
     
     
