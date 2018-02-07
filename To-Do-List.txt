@@ -1,0 +1,7 @@
+- Fix links to work with our custom search so that all links refer to our custom versions of the wikipedia
+- add a style option
+- add a light/dark theme option
+- add categories to main page
+- design basic page layouts
+- discuss with team
+- make evalutation surveys 
